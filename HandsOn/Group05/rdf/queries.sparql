@@ -1,0 +1,5 @@
+SELECT DISTINCT ?place
+WHERE{
+?event er:Instalacion ?instalacion .
+?instalacion em:seLocaliza ?place .
+} LIMIT 100

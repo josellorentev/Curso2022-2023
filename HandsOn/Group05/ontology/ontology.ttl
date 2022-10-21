@@ -74,20 +74,12 @@ em:seDesarrolla a owl:ObjectProperty ;
     rdfs:domain er:Evento ;
     rdfs:range time:IntervaloTiempo .
 
-em:seEncuentra a owl:ObjectProperty ;
-    rdfs:label "se encuentra" ;
-    rdfs:domain er:Instalacion ;
-    rdfs:range er:Barrio .
 
 em:inscribe a owl:ObjectProperty ;
     rdfs:label "inscribe" ;
     rdfs:domain er:Evento ;
     rdfs:range er:Actividad .
 
-em:perteneceA a owl:ObjectProperty ;
-    rdfs:label "pertenece a" ;
-    rdfs:domain er:Barrio ;
-    rdfs:range er:Distrito .
 
 em:seLocaliza a owl:ObjectProperty ;
     rdfs:label "se localiza" ;
@@ -106,14 +98,16 @@ time:inicio a owl:DatatypeProperty ;
     rdfs:label "inicio" ;
     rdfs:range xsd:date .
 
+ns:Barrio a owl:DatatypeProperty ;
+    rdfs:label "Barrio" ;
+    rdfs:range xsd:string .    
+
+ns:Distrito a owl:DatatypeProperty ;
+    rdfs:label "Distrito" ;
+    rdfs:range xsd:string .
+
 er:Actividad a owl:Class ;
     rdfs:label "Actividad" .
-
-er:Barrio a owl:Class ;
-    rdfs:label "Barrio" .
-
-er:Distrito a owl:Class ;
-    rdfs:label "Distrito" .
 
 time:IntervaloTiempo a owl:Class ;
     rdfs:label "Intervalo Tiempo" .

@@ -18,5 +18,4 @@ ev:11768163 em:seDesarrolla time:IntervaloTiempo [
 ev:11768163 em:inscribe ac:15ª_Edición_Mi_primer_Festival_de_Cine.
 ev:11768163 em:seLocaliza ins:Centro_de_Cultura_Contemporánea_Conde_Duque.
 
-ins:Centro_de_Cultura_Contemporánea_Conde_Duque em:seEncuentra ba:UNIVERSIDAD.  .
-ba:UNIVERSIDAD em:perteneceA dis:CENTRO.
+

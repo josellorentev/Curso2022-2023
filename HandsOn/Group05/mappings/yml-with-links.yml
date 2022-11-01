@@ -22,7 +22,7 @@ mappings:
       s:  http://ocioMadrid.com/eventosMadrid/resource/Distrito/$(DISTRITO-INSTALACION)
       po:
        - [a, er:Distrito]
-       - [rdfs:label,$(DISTRITO-INSTALACION),xsd:string]
+       - [em:nombreD,$(DISTRITO-INSTALACION),xsd:string]
        - [owl:sameAs,$(same_as_distrito)~iri,xsd:anyURI]
 
   barrio:
@@ -31,7 +31,7 @@ mappings:
       s:  http://ocioMadrid.com/eventosMadrid/resource/Barrio/$(BARRIO-INSTALACION)
       po:
        - [a, er:Barrio]
-       - [rdfs:label,$(BARRIO-INSTALACION),xsd:string]
+       - [em:nombreB,$(BARRIO-INSTALACION),xsd:string]
        - [owl:sameAs,$(same_as_barrio)~iri,xsd:anyURI]   
 
   instalacion:
@@ -74,7 +74,7 @@ mappings:
    s: http://ocioMadrid.com/eventosMadrid/resource/Evento/$(ID-EVENTO)
    po:
       - [a, er:Evento]
-      - [em:titulo,$(TITULO),xsd:string]
+      - [em:titulo,$(TITULO)]
       - [em:precio,$(PRECIO),xsd:string]
       - [em:url,$(CONTENT-URL),xsd:anyURI]
       - [em:gratuito,$(GRATUITO),xsd:boolean]

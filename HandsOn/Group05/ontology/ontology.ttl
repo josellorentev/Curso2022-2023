@@ -44,15 +44,19 @@ er:Evento a owl:Class ;
     rdfs:label "codigo postal" ;
     rdfs:range xsd:string .
 
-:coordenadas-X a owl:DatatypeProperty ;
+:latitud a owl:DatatypeProperty ;
     rdfs:domain Instalacion
-    rdfs:label "coordenadas- x" ;
+    rdfs:label "latitud" ;
     rdfs:range xsd:double .
 
-:coordenadas-Y a owl:DatatypeProperty ;
+:longitud a owl:DatatypeProperty ;
     rdfs:domain Instalacion
-    rdfs:label "coordenadas- y" ;
+    rdfs:label "longitud" ;
     rdfs:range xsd:double .
+:numero a owl:DatatypeProperty ;
+    rdfs:domain Instalacion
+    rdfs:label "numero" ;
+    rdfs:range xsd:string .
 
 :gratuito a owl:DatatypeProperty ;
     rdfs:domain Evento

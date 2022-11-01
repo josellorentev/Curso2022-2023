@@ -1,27 +1,21 @@
 @base <http://ocioMadrid.com/eventosMadrid/ontology/Eventos> .
 @prefix : <http://ocioMadrid.com/eventosMadrid/ontology/Eventos> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix em: <http://ocioMadrid/lcc/ontology/EventosMadrid#> .
-@prefix er: <http://ocioMadrid/lcc/resource/> .
+@prefix er: <http://ocioMadrid.com/eventosMadrid/resource/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix time: <http://www.owl-ontologies.com/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix mz: <http://madrid/zonas/> .
+
 
 <http://ocioMadrid.com/eventosMadrid/ontology/Eventos> rdf:type owl:Ontology
 
 er:Actividad a owl:Class ;
     rdfs:label "Actividad" .
 
-mz:Barrio a owl:Class ;
+er:Barrio a owl:Class ;
     rdfs:label "Barrio" .
 
-mz:Distrito a owl:Class ;
+er:Distrito a owl:Class ;
     rdfs:label "Distrito" .
-
-time:IntervaloTiempo a owl:Class ;
-    rdfs:label "Intervalo Tiempo" .
 
 er:Instalacion a owl:Class ;
     rdfs:label "Instalacion" .

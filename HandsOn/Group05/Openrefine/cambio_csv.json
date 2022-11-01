@@ -1637,5 +1637,17 @@ CarlosD21 Hands-on assignment 3
       }
     ],
     "description": "Mass edit cells in column ACCESIBILIDAD-INSTALACION"
+  },{
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "TIPO",
+    "expression": "grel:value.split("/contenido/actividades/")[0]",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TIPO using expression grel:value.split("/contenido/actividades/")[0]"
   }
   ]

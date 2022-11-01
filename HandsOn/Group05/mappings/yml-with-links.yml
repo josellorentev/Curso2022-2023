@@ -44,9 +44,10 @@ mappings:
       - [em:accesibilidad,$(ACCESIBILIDAD-INSTALACION),xsd:string]
       - [em:claseVial,$(CLASE-VIAL-INSTALACION),xsd:string]
       - [em:via,$(NOMBRE-VIA-INSTALACION),xsd:string]
+      - [em:numero,$(NUM-INSTALACION),xsd:string]
       - [em:codigoPostal,$(CODIGO-POSTAL-INSTALACION),xsd:string]
-      - [em:coordenadas_X,$(COORDENADA-X),xsd:double]
-      - [em:coordenadas_Y,$(COORDENADA-Y),xsd:double]
+      - [em:latitud,$(LATITUD),xsd:double]
+      - [em:longitud,$(LONGITUD),xsd:double]
       - [em:distrito,$(DISTRITO-INSTALACION),xsd:string]
       - [em:barrio,$(BARRIO-INSTALACION),xsd:string]
       - p: em:perteneceDistrito

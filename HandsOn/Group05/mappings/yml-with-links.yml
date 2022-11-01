@@ -1,42 +1,49 @@
-base: <http://ocioMadrid.com/eventosMadrid/ontology/Eventos>.
+base: http://ocioMadrid.com/eventosMadrid/ontology/Eventos
 prefixes:
-  rr: <http://www.w3.org/ns/r2rml#>.
-  rml: <http://semweb.mmlab.be/ns/rml#>.
-  em: <http://ocioMadrid.com/eventosMadrid/ontology/Eventos#>.
-  er: <http://ocioMadrid.com/eventosMadrid/resource/>.
-  xsd: <http://www.w3.org/2001/XMLer#>.
-  owl: <http://www.w3.org/2002/07/owl#>.
-
-  
+  rr: http://www.w3.org/ns/r2rml#
+  rml: http://semweb.mmlab.be/ns/rml#
+  em: http://ocioMadrid.com/eventosMadrid/ontology/Eventos#
+  er: http://ocioMadrid.com/eventosMadrid/resource/
+  xsd: http://www.w3.org/2001/XMLer#
+  owl: http://www.w3.org/2002/07/owl#
 mappings:
-  actividad:
+ evento:
    sources:
       - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
-   s: http://ocioMadrid.com/eventosMadrid/resource/Actividad/$(TITULO-ACTIVIDAD)
+   s: http://ocioMadrid.com/eventosMadrid/resource/Evento/$(ID-EVENTO)
    po:
-      - [a, er:Actividad]
+      - [a, er:Evento]
+      - [em:titulo,$(TITULO),xsd:string]
+      - [em:precio,$(PRECIO),xsd:string]
+      - [em:url,$(CONTENT-URL),xsd:anyURI]
+      - [em:gratuito,$(GRATUITO),xsd:boolean]
+      - [em:audiencia,$(AUDIENCIA),xsd:string]
+      - [em:tipo,$(TIPO),xsd:string]
+      - [em:largaDuracion,$(LARGA-DURACION),xsd:boolean]  
+      - [em:hora,$(HORA),xsd:time]
+      - [em:inicio,$(FECHA),xsd:date]
+      - [em:fin,$(FECHA-FIN),xsd:date]
+      - [em:dias,$(DIAS-SEMANA),xsd:string]
       - [em:tituloA,$(TITULO-ACTIVIDAD),xsd:string]
-      - [em:urlA,$(URL-ACTIVIDAD),xsd:anyURI]
-mappings:
-  distrito:
-      sources:
-      - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
-      s:  http://ocioMadrid.com/eventosMadrid/resource/Distrito/$(DISTRITO-INSTALACION)
-      po:
-       - [a, er:Distrito]
-       - [em:nombreD,$(DISTRITO-INSTALACION),xsd:string]
-       - [owl:sameAs,$(same_as_distrito)~iri,xsd:anyURI]
-mappings:
-  barrio:
-      sources:
-      - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
-      s:  http://ocioMadrid.com/eventosMadrid/resource/Barrio/$(BARRIO-INSTALACION)
-      po:
-       - [a, er:Barrio]
-       - [em:nombreB,$(BARRIO-INSTALACION),xsd:string]
-       - [owl:sameAs,$(same_as_barrio)~iri,xsd:anyURI]   
-mappings:
-  instalacion:
+      - [em:nombreI,$(NOMBRE-INSTALACION),xsd:string]
+      - p: em:inscribe
+        o:
+          mapping: actividad
+          condition:
+            function: equal
+            parameters:
+            - [str1, $(TITULO-ACTIVIDAD)]
+            - [str2, $(TITULO-ACTIVIDAD)]
+      - p: em:seLocaliza
+        o:
+          mapping: instalacion
+          condition:
+            function: equal
+            parameters:
+            - [str1, $(NOMBRE-INSTALACION)]
+            - [str2, $(NOMBRE-INSTALACION)]
+
+ instalacion:
    sources:
       - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
    s: http://ocioMadrid.com/eventosMadrid/resource/Instalacion/$(NOMBRE-INSTALACION)
@@ -55,58 +62,44 @@ mappings:
       - [em:barrio,$(BARRIO-INSTALACION),xsd:string]
       - p: em:perteneceDistrito
         o:
-        - mapping: distrito
+          mapping: distrito
           condition:
             function: equal
             parameters:
-            - [str1,$ (DISTRITO-INSTALACION)]
-            - [str2,$ (DISTRITO-INSTALACION)]
+            - [str1, $(DISTRITO-INSTALACION)]
+            - [str2, $(DISTRITO-INSTALACION)]
       - p: em:perteneceBarrio
         o:
-        - mapping: barrio
+          mapping: barrio
           condition:
             function: equal
             parameters:
-            - [str1,$ (BARRIO-INSTALACION)]
-            - [str2,$ (BARRIO-INSTALACION)]  
-mappings:  
-  evento:
+            - [str1, $(BARRIO-INSTALACION)]
+            - [str2, $(BARRIO-INSTALACION)] 
+
+ actividad:
    sources:
       - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
-   s: http://ocioMadrid.com/eventosMadrid/resource/Evento/$(ID-EVENTO)
+   s: http://ocioMadrid.com/eventosMadrid/resource/Actividad/$(TITULO-ACTIVIDAD)
    po:
-      - [a, er:Evento]
-      - [em:titulo,$(TITULO),xsd:string]
-      - [em:precio,$(PRECIO),xsd:string]
-      - [em:url,$(CONTENT-URL),xsd:anyURI]
-      - [em:gratuito,$(GRATUITO),xsd:boolean]
-      - [em:audiencia,$(AUDIENCIA),xsd:string]
-      - [em:tipo,$(TIPO),xsd:string]
-      - [em:largaDuracion,$(LARGA-DURACION),xsd:boolean]
-      
-      - [em:hora,$(HORA),xsd:time]
-      - [em:inicio,$(FECHA),xsd:date]
-      - [em:fin,$(FECHA-FIN),xsd:date]
-      - [em:dias,$(DIAS-SEMANA),xsd:string]
-      
+      - [a, er:Actividad]
       - [em:tituloA,$(TITULO-ACTIVIDAD),xsd:string]
-      
-      - [em:nombreI,$(NOMBRE-INSTALACION),xsd:string]
-      
-      - p: em:inscribe
-        o:
-        - mapping: actividad
-          condition:
-            function: equal
-            parameters:
-            - [str1,$ (TITULO-ACTIVIDAD)]
-            - [str2,$ (TITULO-ACTIVIDAD)]
-      - p: em:seLocaliza
-        o:
-        - mapping: instalacion
-          condition:
-          function: equal
-          parameters:
-          - [str1,$ (NOMBRE-INSTALACION)]
-          - [str2,$ (NOMBRE-INSTALACION)]
- 
+      - [em:urlA,$(URL-ACTIVIDAD),xsd:anyURI]
+
+ distrito:
+      sources:
+      - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
+      s:  http://ocioMadrid.com/eventosMadrid/resource/Distrito/$(DISTRITO-INSTALACION)
+      po:
+       - [a, er:Distrito]
+       - [em:nombreD,$(DISTRITO-INSTALACION),xsd:string]
+       - [owl:sameAs,$(same_as_distrito)~iri,xsd:anyURI]
+
+ barrio:
+      sources:
+      - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
+      s:  http://ocioMadrid.com/eventosMadrid/resource/Barrio/$(BARRIO-INSTALACION)
+      po:
+       - [a, er:Barrio]
+       - [em:nombreB,$(BARRIO-INSTALACION),xsd:string]
+       - [owl:sameAs,$(same_as_barrio)~iri,xsd:anyURI]  

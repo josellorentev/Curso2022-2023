@@ -17,7 +17,7 @@ mappings:
       - [a, er:Actividad]
       - [em:tituloA,$(TITULO-ACTIVIDAD),xsd:string]
       - [em:urlA,$(URL-ACTIVIDAD),xsd:anyURI]
-
+mappings:
   distrito:
       sources:
       - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
@@ -26,7 +26,7 @@ mappings:
        - [a, er:Distrito]
        - [em:nombreD,$(DISTRITO-INSTALACION),xsd:string]
        - [owl:sameAs,$(same_as_distrito)~iri,xsd:anyURI]
-
+mappings:
   barrio:
       sources:
       - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
@@ -35,7 +35,7 @@ mappings:
        - [a, er:Barrio]
        - [em:nombreB,$(BARRIO-INSTALACION),xsd:string]
        - [owl:sameAs,$(same_as_barrio)~iri,xsd:anyURI]   
-
+mappings:
   instalacion:
    sources:
       - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
@@ -68,8 +68,8 @@ mappings:
             function: equal
             parameters:
             - [str1,$ (BARRIO-INSTALACION)]
-            - [str2,$ (BARRIO-INSTALACION)]      
-      
+            - [str2,$ (BARRIO-INSTALACION)]  
+mappings:  
   evento:
    sources:
       - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']

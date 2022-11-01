@@ -44,7 +44,7 @@ mappings:
       - [a, er:Instalacion]
       - [ns:URL_Instalacion,$(URL-INSTALACION)]
       - [ns:Nombre_Instalacion,$(NOMBRE-INSTALACION)]
-      - [ns:Accesibilidad,$(ACCESIBILIDAD-INSTALACION),xsd:double]
+      - [ns:Accesibilidad,$(ACCESIBILIDAD-INSTALACION),xsd:string]
       - [ns:ClaseVial,$(CLASE-VIAL-INSTALACION)]
       - [ns:Via,$(NOMBRE-VIA-INSTALACION)]
       - [ns:CodogoPostal,$(CODIGO-POSTAL-INSTALACION)]

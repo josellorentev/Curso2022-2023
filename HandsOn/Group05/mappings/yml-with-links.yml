@@ -1,5 +1,5 @@
+base: http://ocioMadrid.com/eventosMadrid/ontology/Eventos
 prefixes:
-  rr: http://www.w3.org/ns/r2rml#
   em: http://ocioMadrid.com/eventosMadrid/ontology/Eventos#
   er: http://ocioMadrid.com/eventosMadrid/resource/
   xsd: http://www.w3.org/2001/XMLer#

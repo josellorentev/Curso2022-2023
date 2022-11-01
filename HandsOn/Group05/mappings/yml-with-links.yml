@@ -1,9 +1,11 @@
-base: http://ocioMadrid.com/eventosMadrid/ontology/Eventos
+base: <http://ocioMadrid.com/eventosMadrid/ontology/Eventos>.
 prefixes:
-  em: http://ocioMadrid.com/eventosMadrid/ontology/Eventos#
-  er: http://ocioMadrid.com/eventosMadrid/resource/
-  xsd: http://www.w3.org/2001/XMLer#
-  owl: http://www.w3.org/2002/07/owl#
+  rr: <http://www.w3.org/ns/r2rml#>.
+  rml: <http://semweb.mmlab.be/ns/rml#>.
+  em: <http://ocioMadrid.com/eventosMadrid/ontology/Eventos#>.
+  er: <http://ocioMadrid.com/eventosMadrid/resource/>.
+  xsd: <http://www.w3.org/2001/XMLer#>.
+  owl: <http://www.w3.org/2002/07/owl#>.
 
   
 mappings:
@@ -74,7 +76,7 @@ mappings:
    s: http://ocioMadrid.com/eventosMadrid/resource/Evento/$(ID-EVENTO)
    po:
       - [a, er:Evento]
-      - [em:titulo,$(TITULO)]
+      - [em:titulo,$(TITULO),xsd:string]
       - [em:precio,$(PRECIO),xsd:string]
       - [em:url,$(CONTENT-URL),xsd:anyURI]
       - [em:gratuito,$(GRATUITO),xsd:boolean]

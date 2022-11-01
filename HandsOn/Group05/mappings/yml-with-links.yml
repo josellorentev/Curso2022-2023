@@ -3,6 +3,7 @@ prefixes:
   em: http://ocioMadrid.com/eventosMadrid/ontology/Eventos#
   er: http://ocioMadrid.com/eventosMadrid/resource/
   xsd: http://www.w3.org/2001/XMLer#
+  owl: http://www.w3.org/2002/07/owl#
 
   
 mappings:

@@ -42,7 +42,7 @@ er:Evento a owl:Class ;
 :codigoPostal a owl:DatatypeProperty ;
     rdfs:domain Instalacion
     rdfs:label "codigo postal" ;
-    rdfs:range xsd:integer .
+    rdfs:range xsd:string .
 
 :coordenadas-X a owl:DatatypeProperty ;
     rdfs:domain Instalacion
@@ -61,8 +61,8 @@ er:Evento a owl:Class ;
 
 :iDEvento a owl:DatatypeProperty ;
     rdfs:domain Evento
-    rdfs:label "i d evento" ;
-    rdfs:range xsd:interger .
+    rdfs:label "id evento" ;
+    rdfs:range xsd:string .
 
 :nombreI a owl:DatatypeProperty ;
     rdfs:domain Instalacion
@@ -119,15 +119,10 @@ er:Evento a owl:Class ;
     rdfs:label "via" ;
     rdfs:range xsd:string .
 
-:seDesarrolla a owl:ObjectProperty ;
-    rdfs:label "se desarrolla" ;
-    rdfs:domain er:Evento ;
-    rdfs:range time:IntervaloTiempo .
-
 :perteneceBarrio a owl:ObjectProperty ;
     rdfs:label "pertenece barrio" ;
     rdfs:domain er:Instalacion ;
-    rdfs:range mz:Barrio .
+    rdfs:range er:Barrio .
 
 :inscribe a owl:ObjectProperty ;
     rdfs:label "inscribe" ;
@@ -137,7 +132,7 @@ er:Evento a owl:Class ;
 :perteneceDistrito a owl:ObjectProperty ;
     rdfs:label "pertenece distrito" ;
     rdfs:domain er:Instalacion ;
-    rdfs:range mz:Distrito .
+    rdfs:range er:Distrito .
 
 :seLocaliza a owl:ObjectProperty ;
     rdfs:label "se localiza" ;

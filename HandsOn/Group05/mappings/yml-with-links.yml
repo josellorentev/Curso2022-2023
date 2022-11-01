@@ -2,9 +2,6 @@ prefixes:
   rr: http://www.w3.org/ns/r2rml#
   em: http://ocioMadrid.com/eventosMadrid/ontology/Eventos#
   er: http://ocioMadrid.com/eventosMadrid/resource/
-  ns: http://ns.com#
-  mz: http://madrid/zonas/
-  time: http://www.owl-ontologies.com/time#
   xsd: http://www.w3.org/2001/XMLer#
 
   
@@ -12,46 +9,46 @@ mappings:
   actividad:
    sources:
       - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
-   s: http://ocioMadrid/lcc/resource/Actividad/$(TITULO-ACTIVIDAD)
+   s: http://ocioMadrid.com/eventosMadrid/resource/Actividad/$(TITULO-ACTIVIDAD)
    po:
       - [a, er:Actividad]
-      - [ns:Titulo-Actividad,$(TITULO-ACTIVIDAD)]
-      - [ns:URL-Actividad,$(URL-ACTIVIDAD)]
+      - [em:Titulo-Actividad,$(TITULO-ACTIVIDAD)]
+      - [em:URL-Actividad,$(URL-ACTIVIDAD)]
 
   distrito:
       sources:
       - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
-      s:  http://madrid/zonas/Distrito/$(DISTRITO-INSTALACION)
+      s:  http://ocioMadrid.com/eventosMadrid/resource/Distrito/$(DISTRITO-INSTALACION)
       po:
-       - [a,mz:Distrito]
+       - [a, er:Distrito]
        - [rdfs:label,$(DISTRITO-INSTALACION)]
        - [owl:sameAs,$(same_as_distrito)~iri]
 
   barrio:
       sources:
       - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
-      s:  http://madrid/zonas/Barrio/$(BARRIO-INSTALACION)
+      s:  http://ocioMadrid.com/eventosMadrid/resource/Barrio/$(BARRIO-INSTALACION)
       po:
-       - [a,mz:Barrio]
+       - [a, er:Barrio]
        - [rdfs:label,$(BARRIO-INSTALACION)]
        - [owl:sameAs,$(same_as_barrio)~iri]   
 
   instalacion:
    sources:
       - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
-   s: http://ocioMadrid/lcc/resource/Instalacion/$(NOMBRE-INSTALACION)
+   s: http://ocioMadrid.com/eventosMadrid/resource/Instalacion/$(NOMBRE-INSTALACION)
    po:
       - [a, er:Instalacion]
-      - [ns:URL_Instalacion,$(URL-INSTALACION)]
-      - [ns:Nombre_Instalacion,$(NOMBRE-INSTALACION)]
-      - [ns:Accesibilidad,$(ACCESIBILIDAD-INSTALACION),xsd:string]
-      - [ns:ClaseVial,$(CLASE-VIAL-INSTALACION)]
-      - [ns:Via,$(NOMBRE-VIA-INSTALACION)]
-      - [ns:CodogoPostal,$(CODIGO-POSTAL-INSTALACION)]
-      - [ns:Coordenadas_X,$(COORDENADA-X),xsd:double]
-      - [ns:Coordenadas_Y,$(COORDENADA-Y),xsd:double]
-      - [ns:Distrito,$(DISTRITO-INSTALACION)]
-      - [ns:Barrio,$(BARRIO-INSTALACION)]
+      - [em:URL_Instalacion,$(URL-INSTALACION)]
+      - [em:Nombre_Instalacion,$(NOMBRE-INSTALACION)]
+      - [em:Accesibilidad,$(ACCESIBILIDAD-INSTALACION),xsd:string]
+      - [em:ClaseVial,$(CLASE-VIAL-INSTALACION)]
+      - [em:Via,$(NOMBRE-VIA-INSTALACION)]
+      - [em:CodogoPostal,$(CODIGO-POSTAL-INSTALACION)]
+      - [em:Coordenadas_X,$(COORDENADA-X),xsd:double]
+      - [em:Coordenadas_Y,$(COORDENADA-Y),xsd:double]
+      - [em:Distrito,$(DISTRITO-INSTALACION)]
+      - [em:Barrio,$(BARRIO-INSTALACION)]
       - p: em:perteneceDistrito
         o:
         - mapping: distrito
@@ -68,38 +65,29 @@ mappings:
             parameters:
             - [str1,$ (BARRIO-INSTALACION)]
             - [str2,$ (BARRIO-INSTALACION)]      
-
-  intervaloTiempo:
-   sources:
-      - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
-   s: http://www.owl-ontologies.com/time#IntervaloTiempo/$(FECHA)_$(FECHA-FIN)_$(HORA)
-   po:
-      - [a, time:intervaloTiempo]
-      - [time:hora,$(HORA),xsd:time]
-      - [time:inicio,$(FECHA),xsd:date]
-      - [time:fin,$(FECHA-FIN),xsd:date]
       
   evento:
    sources:
       - ['300107-0-agenda-actividades-eventos-with-links.csv~csv']
-   s: http://ocioMadrid/lcc/resource/Evento/$(ID-EVENTO)
+   s: http://ocioMadrid.com/eventosMadrid/resource/Evento/$(ID-EVENTO)
    po:
       - [a, er:Evento]
-      - [ns:titulo,$(TITULO)]
-      - [ns:Precio,$(PRECIO)]
-      - [ns:Gratuito,$(GRATUITO),xsd:integer]
-      - [ns:Audiencia,$(AUDIENCIA)]
-      - [ns:tipo,$(TIPO)]
-      - [ns:LargaDuracion,$(LARGA-DURACION) ]
-      - [ns:Dias_semana,$(DIAS-SEMANA) ]
+      - [em:titulo,$(TITULO)]
+      - [em:Precio,$(PRECIO)]
+      - [em:Gratuito,$(GRATUITO),xsd:integer]
+      - [em:Audiencia,$(AUDIENCIA)]
+      - [em:tipo,$(TIPO)]
+      - [em:LargaDuracion,$(LARGA-DURACION) ]
+      - [em:Dias_semana,$(DIAS-SEMANA) ]
       
-      - [time:hora,$(HORA),xsd:time]
-      - [time:inicio,$(FECHA),xsd:date]
-      - [time:fin,$(FECHA-FIN),xsd:date]
+      - [em:hora,$(HORA),xsd:time]
+      - [em:inicio,$(FECHA),xsd:date]
+      - [em:fin,$(FECHA-FIN),xsd:date]
+      - [em:dias,$(DIAS-SEMANA),xsd:string]
       
-      - [ns:Titulo-Actividad,$(TITULO-ACTIVIDAD)]
+      - [em:Titulo-Actividad,$(TITULO-ACTIVIDAD)]
       
-      - [ns:Nombre-Instalacion,$(NOMBRE-INSTALACION)]
+      - [em:Nombre-Instalacion,$(NOMBRE-INSTALACION)]
       
       - p: em:inscribe
         o:
@@ -117,13 +105,4 @@ mappings:
           parameters:
           - [str1,$ (NOMBRE-INSTALACION)]
           - [str2,$ (NOMBRE-INSTALACION)]
-      - p: em:seDesrrolla
-        o:
-        - mapping: intervaloTiempo
-          condition:
-          function: equal
-          parameters:
-          - [str1,$(FECHA)]
-          - [str2,$(FECHA)]
-
-   
+ 
